@@ -36,9 +36,14 @@ export default function Navbar() {
       }`}
       data-testid="main-navbar"
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14 h-16 md:h-20 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14 h-20 md:h-24 flex items-center justify-between">
         <Link to="/" className="flex items-center" data-testid="nav-logo-link">
-          <Logo className="text-2xl md:text-[26px]" />
+          <img
+            src="/quickbuck-full.png"
+            alt="QuickBuck"
+            className="h-14 md:h-16 w-auto select-none rounded-md"
+            draggable={false}
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">

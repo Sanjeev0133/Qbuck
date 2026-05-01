@@ -83,25 +83,31 @@ export default function AboutPage() {
             </h2>
           </FadeIn>
 
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: "Rohan M.", role: "Co-founder / CEO", bio: "Grew up mowing lawns for ₹50. Now building the app he wishes he'd had at 15." },
-              { name: "Aisha K.", role: "Co-founder / CTO", bio: "Ex-fintech. Obsessed with instant settlement and making trust scale." },
-              { name: "Sam P.", role: "Head of Trust & Safety", bio: "Former child-safety advisor. Every safety feature goes through him first." },
-            ].map((p, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="bg-white border border-black/5 rounded-4xl overflow-hidden">
-                  <div className="aspect-[4/5] bg-gradient-to-br from-olive/20 via-sand to-sand-dark/40 flex items-center justify-center">
-                    <span className="font-display text-8xl font-bold text-olive/60">{p.name[0]}</span>
+              { name: "Paul Abraham",  role: "Technical Engineering",            bio: "Owns the core platform stack. Obsessed with reliability, performance, and writing the smallest possible code that solves the biggest possible problem." },
+              { name: "Sanjeev Reddy", role: "Web Engineering",                  bio: "Builds the surfaces you actually touch. Translates designs into fast, accessible, beautifully animated experiences across web and mobile." },
+              { name: "Chavi",         role: "User Flow & Product Efficiency",   bio: "Maps every tap, every screen, every drop-off. Removes friction so the path from gig posted to gig paid is as short as humanly possible." },
+              { name: "Tapasya",       role: "Revenue & Finance Management",     bio: "Designs the unit economics so QuickBuck can pay earners instantly and stay sustainable. Makes the math add up — for everyone." },
+              { name: "Joanna",        role: "Marketing Head",                   bio: "Tells QuickBuck's story to the people it's actually built for. Owns brand, growth, and every conversation that brings the next earner home." },
+            ].map((p, i) => {
+              const initials = p.name.split(" ").map((s) => s[0]).slice(0, 2).join("");
+              return (
+                <FadeIn key={p.name} delay={i * 0.08}>
+                  <div className="bg-white border border-black/5 rounded-4xl overflow-hidden h-full flex flex-col">
+                    <div className="aspect-[4/5] relative bg-gradient-to-br from-olive/30 via-sand to-sand-dark/60 flex items-center justify-center">
+                      <span className="font-display text-[7rem] font-extrabold text-ink/15 tracking-[-0.04em] leading-none">{initials}</span>
+                      <span className="absolute bottom-4 left-4 right-4 text-[10px] uppercase tracking-[0.22em] text-ink/40">Photo coming soon</span>
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <p className="font-display text-2xl font-semibold tracking-tight">{p.name}</p>
+                      <p className="text-olive text-[11px] font-medium uppercase tracking-[0.22em] mt-2">{p.role}</p>
+                      <p className="mt-4 text-ink/65 leading-relaxed text-[15px]">{p.bio}</p>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <p className="font-display text-2xl font-semibold tracking-tight">{p.name}</p>
-                    <p className="text-olive text-sm font-medium uppercase tracking-[0.18em] mt-1">{p.role}</p>
-                    <p className="mt-4 text-ink/65 leading-relaxed">{p.bio}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>

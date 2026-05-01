@@ -342,39 +342,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <section className="relative bg-sand-light py-24 md:py-32" data-testid="testimonials-section">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14">
-          <FadeIn>
-            <span className="text-xs uppercase tracking-[0.22em] text-olive font-semibold">The early crew</span>
-            <h2 className="mt-5 font-display font-bold text-balance leading-[0.95] tracking-[-0.035em] max-w-4xl"
-                style={{ fontSize: "clamp(36px, 5.5vw, 80px)" }}>
-              Earners are picking up real work. Posters are finally getting help.
-            </h2>
-          </FadeIn>
-
-          <Stagger className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { quote: "Picked up four dog-walking gigs last weekend in my colony. Paid into UPI before I got home.", name: "Aanya", tag: "Earner · Bengaluru" },
-              { quote: "I posted a 'help me move a sofa' gig at 6pm. Two earners showed up at 6:30. Done by 7.", name: "Rohan", tag: "Poster · Mumbai" },
-              { quote: "Verified IDs, escrow payments, and a real human on support. That's what convinced me.", name: "Priya", tag: "Earner · Delhi NCR" },
-            ].map((q, i) => (
-              <StaggerItem key={i}>
-                <blockquote className="bg-white border border-black/5 rounded-3xl p-8 h-full flex flex-col justify-between">
-                  <p className="font-display text-xl md:text-2xl leading-[1.25] tracking-tight text-ink">
-                    "{q.quote}"
-                  </p>
-                  <footer className="mt-8 flex items-center justify-between text-sm">
-                    <span className="font-semibold">{q.name}</span>
-                    <span className="text-ink/50 text-xs uppercase tracking-[0.2em]">{q.tag}</span>
-                  </footer>
-                </blockquote>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
       {/* ===== FINAL CTA ===== */}
       <section className="relative bg-olive text-sand-light py-24 md:py-40 overflow-hidden" data-testid="cta-section">
         <div className="absolute -left-20 -top-20 w-[500px] h-[500px] rounded-full bg-olive-dark/60 blur-3xl opacity-70" />

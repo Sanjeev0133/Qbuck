@@ -37,11 +37,30 @@ const STEPS = [
 ];
 
 const FAQ = [
-  { q: "Who can use QuickBuck?", a: "QuickBuck is open to anyone aged 18 and above with a valid government ID. Posters and earners both go through the same verification flow." },
-  { q: "Is it really instant?", a: "Yes. The moment a poster confirms your task is complete, funds are released to your QuickBuck wallet. Cash-outs to most banks and UPI settle in under a minute." },
-  { q: "What if something goes wrong?", a: "Every gig is covered by our dispute and refund protection. Funds stay in escrow until the poster confirms. In-app SOS and 24/7 human support are available anytime." },
-  { q: "How are earners and posters verified?", a: "Both sides verify with a government-issued ID at signup. We run sanction-list and basic background checks on posters before any gig goes live." },
-  { q: "What does it cost?", a: "Joining and accepting gigs is free for earners. Task posters pay a small service fee per gig. No subscription, ever." },
+  {
+    q: "Who can use QuickBuck?",
+    a: "Anyone aged 18 or above with a valid government ID can join — both as an earner (someone who picks up gigs) and as a poster (someone who posts them).",
+  },
+  {
+    q: "How fast do I actually get paid?",
+    a: "The moment a poster confirms your task is complete, the funds are released from escrow into your QuickBuck wallet. Cash-outs to most banks and UPI settle in under a minute.",
+  },
+  {
+    q: "How is everyone verified?",
+    a: "Both earners and posters complete government ID verification at signup. We additionally run sanction-list and basic background checks on posters before any of their gigs go live.",
+  },
+  {
+    q: "What if something goes wrong on a gig?",
+    a: "Funds stay in escrow until the poster confirms the task. If there's a dispute, our refund protection covers it. Live trip sharing, in-app SOS, and 24/7 human support are available end-to-end.",
+  },
+  {
+    q: "What does QuickBuck cost?",
+    a: "Joining is free. Earners keep 100% of the gig payout. Posters pay a small flat service fee per gig — shown upfront before they post. There is no subscription, ever.",
+  },
+  {
+    q: "When and where does QuickBuck launch?",
+    a: "We're rolling out city by city in early 2026, starting in Bengaluru, then Mumbai and Delhi NCR. Join the waitlist to get notified the day your area opens up.",
+  },
 ];
 
 export default function HowItWorksPage() {

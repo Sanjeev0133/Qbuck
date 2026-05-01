@@ -58,28 +58,29 @@ export default function ContactPage() {
           <FadeIn className="lg:col-span-5 space-y-8">
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">Email</p>
-              <a href="mailto:hello@quickbuck.app" className="font-display text-3xl md:text-4xl font-semibold tracking-tight hover:text-olive transition-colors inline-flex items-center gap-2">
-                hello@quickbuck.app <Mail className="w-5 h-5" />
+              <a href="mailto:hello@quickbuck.in" className="font-display text-3xl md:text-4xl font-semibold tracking-tight hover:text-olive transition-colors inline-flex items-center gap-2" data-testid="contact-email-hello">
+                hello@quickbuck.in <Mail className="w-5 h-5" />
               </a>
-              <p className="text-ink/60 mt-3">Average reply time: 4 hours (weekdays).</p>
+              <p className="text-ink/60 mt-3">For general questions, partnerships, or to say hi.</p>
             </div>
             <div className="border-t border-black/10 pt-8">
               <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">Press</p>
-              <a href="mailto:press@quickbuck.app" className="font-display text-2xl font-semibold tracking-tight hover:text-olive">
-                press@quickbuck.app
+              <a href="mailto:press@quickbuck.in" className="font-display text-2xl font-semibold tracking-tight hover:text-olive" data-testid="contact-email-press">
+                press@quickbuck.in
               </a>
             </div>
             <div className="border-t border-black/10 pt-8">
-              <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">HQ</p>
-              <p className="font-display text-xl tracking-tight inline-flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-olive" />
-                Bengaluru, KA — with teams in Mumbai & Delhi NCR
-              </p>
+              <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">Trust & Safety</p>
+              <a href="mailto:safety@quickbuck.in" className="font-display text-2xl font-semibold tracking-tight hover:text-olive" data-testid="contact-email-safety">
+                safety@quickbuck.in
+              </a>
+              <p className="text-ink/60 mt-3 leading-relaxed">For urgent safety concerns. After launch, in-app SOS will be the fastest path.</p>
             </div>
             <div className="border-t border-black/10 pt-8">
-              <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">Trust & Safety</p>
-              <p className="text-ink/75 leading-relaxed">
-                If you have an urgent safety concern, we have 24/7 in-app support after launch. For now, email <a href="mailto:safety@quickbuck.app" className="underline underline-offset-4 decoration-olive">safety@quickbuck.app</a>.
+              <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">Where we are</p>
+              <p className="font-display text-xl tracking-tight inline-flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-olive" />
+                Bengaluru, India
               </p>
             </div>
           </FadeIn>
