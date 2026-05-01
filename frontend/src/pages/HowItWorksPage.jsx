@@ -6,9 +6,9 @@ import { ChevronRight } from "lucide-react";
 const STEPS = [
   {
     num: "01",
-    title: "Sign up & get verified",
-    body: "Create your teen account in 90 seconds. Parents receive a consent link and verify the account from their own phone.",
-    details: ["Age 13–19 eligible", "Parent ID verification", "Free, forever"],
+    title: "Sign up & verify ID",
+    body: "Create your QuickBuck account in 90 seconds. Verify your government ID and add your bank or UPI for instant payouts.",
+    details: ["18+ eligible", "Government ID verified", "Free to join"],
   },
   {
     num: "02",
@@ -20,28 +20,28 @@ const STEPS = [
     num: "03",
     title: "Accept & chat",
     body: "Tap accept. A secure in-app chat opens with the poster. Agree on timing. Navigate with built-in directions.",
-    details: ["Private encrypted chat", "Live ETA sharing", "Safety check-ins every 30 min"],
+    details: ["Private encrypted chat", "Live ETA sharing", "In-app SOS at any time"],
   },
   {
     num: "04",
     title: "Complete the task",
     body: "Show up, do great work, snap a before/after photo in the app. The poster confirms with a single tap.",
-    details: ["Photo-verified completion", "24/7 support", "Rating both ways"],
+    details: ["Photo-verified completion", "24/7 human support", "Two-way ratings"],
   },
   {
     num: "05",
     title: "Get paid. Instantly.",
-    body: "As soon as the poster confirms, cash lands in your QuickBuck wallet. Cash out to your bank in under 60 seconds.",
-    details: ["No 'net 30' or 'pending'", "Bank + debit + digital cash", "Weekly report emailed to parents"],
+    body: "As soon as the poster confirms, cash lands in your QuickBuck wallet. Cash out to your bank or UPI in under 60 seconds.",
+    details: ["No 'pending' or salary delays", "Bank, UPI, and wallet payouts", "Tax-ready earnings statement"],
   },
 ];
 
 const FAQ = [
-  { q: "How old do I have to be?", a: "QuickBuck is open to teens ages 13–19 with verified parental consent. Posters must be 18+ and ID-verified." },
-  { q: "Is it really instant?", a: "Yes. The moment a poster confirms your task is complete, funds are released to your QuickBuck wallet. Cash-outs to most banks settle in under a minute." },
-  { q: "What if something goes wrong?", a: "Every gig is covered by our dispute and refund protection. In-app safety check-ins and 24/7 support are available anytime." },
-  { q: "Do parents have visibility?", a: "Parents get a dedicated dashboard with live location during tasks, earnings summaries, and the ability to approve or decline specific gig categories." },
-  { q: "What does it cost?", a: "Joining and accepting gigs is free for teens. Task posters pay a small service fee per gig. No subscription, ever." },
+  { q: "Who can use QuickBuck?", a: "QuickBuck is open to anyone aged 18 and above with a valid government ID. Posters and earners both go through the same verification flow." },
+  { q: "Is it really instant?", a: "Yes. The moment a poster confirms your task is complete, funds are released to your QuickBuck wallet. Cash-outs to most banks and UPI settle in under a minute." },
+  { q: "What if something goes wrong?", a: "Every gig is covered by our dispute and refund protection. Funds stay in escrow until the poster confirms. In-app SOS and 24/7 human support are available anytime." },
+  { q: "How are earners and posters verified?", a: "Both sides verify with a government-issued ID at signup. We run sanction-list and basic background checks on posters before any gig goes live." },
+  { q: "What does it cost?", a: "Joining and accepting gigs is free for earners. Task posters pay a small service fee per gig. No subscription, ever." },
 ];
 
 export default function HowItWorksPage() {

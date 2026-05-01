@@ -79,7 +79,7 @@ export default function ContactPage() {
             <div className="border-t border-black/10 pt-8">
               <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">Trust & Safety</p>
               <p className="text-ink/75 leading-relaxed">
-                If you're a parent or teen with an urgent safety concern, we have 24/7 support inside the app after launch. For now, email <a href="mailto:safety@quickbuck.app" className="underline underline-offset-4 decoration-olive">safety@quickbuck.app</a>.
+                If you have an urgent safety concern, we have 24/7 in-app support after launch. For now, email <a href="mailto:safety@quickbuck.app" className="underline underline-offset-4 decoration-olive">safety@quickbuck.app</a>.
               </p>
             </div>
           </FadeIn>

@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
           <div className="md:col-span-5">
             <p className="text-xs uppercase tracking-[0.2em] text-sand/60 mb-6">
-              The teen gig economy
+              The neighbourhood gig economy
             </p>
             <h2 className="font-display font-bold text-balance text-3xl md:text-4xl leading-[1.02] tracking-tight">
               Small tasks.
@@ -19,7 +19,7 @@ export default function Footer() {
               <span className="text-olive-light">Instant cash.</span>
             </h2>
             <p className="mt-6 text-sand/70 max-w-md leading-relaxed">
-              QuickBuck connects teens with safe, local gigs in their neighborhood —
+              QuickBuck connects people with safe, local gigs in their neighbourhood —
               and pays them the moment the job is done.
             </p>
 
@@ -43,7 +43,7 @@ export default function Footer() {
             <p className="text-xs uppercase tracking-[0.2em] text-sand/50 mb-5">Product</p>
             <ul className="space-y-3">
               <li><Link to="/how-it-works" className="text-sand/85 hover:text-sand transition-colors">How it works</Link></li>
-              <li><Link to="/for-teens" className="text-sand/85 hover:text-sand transition-colors">For Teens</Link></li>
+              <li><Link to="/for-earners" className="text-sand/85 hover:text-sand transition-colors">For Earners</Link></li>
               <li><Link to="/for-posters" className="text-sand/85 hover:text-sand transition-colors">For Posters</Link></li>
               <li><Link to="/#waitlist" className="text-sand/85 hover:text-sand transition-colors">Waitlist</Link></li>
             </ul>
@@ -60,10 +60,10 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <p className="text-xs uppercase tracking-[0.2em] text-sand/50 mb-5">Legal & Safety</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-sand/50 mb-5">Legal</p>
             <ul className="space-y-3">
               <li><a href="#" className="text-sand/85 hover:text-sand transition-colors">Trust & Safety</a></li>
-              <li><a href="#" className="text-sand/85 hover:text-sand transition-colors">Parental consent</a></li>
+              <li><a href="#" className="text-sand/85 hover:text-sand transition-colors">Earner agreement</a></li>
               <li><a href="#" className="text-sand/85 hover:text-sand transition-colors">Terms</a></li>
               <li><a href="#" className="text-sand/85 hover:text-sand transition-colors">Privacy</a></li>
             </ul>

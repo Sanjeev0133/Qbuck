@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import Wordmark from "./Wordmark";
+import Wordmark, { Logo } from "./Wordmark";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/how-it-works", label: "How it works" },
-  { to: "/for-teens", label: "For Teens" },
+  { to: "/for-earners", label: "For Earners" },
   { to: "/for-posters", label: "For Posters" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
@@ -38,7 +38,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center" data-testid="nav-logo-link">
-          <Wordmark className="text-2xl md:text-[28px]" />
+          <Logo className="text-2xl md:text-[26px]" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">

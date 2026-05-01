@@ -3,10 +3,10 @@ import { FadeIn, Stagger, StaggerItem } from "../components/Motion";
 import WaitlistForm from "../components/WaitlistForm";
 
 const VALUES = [
-  { title: "Dignity of work", body: "We believe teenagers are capable, responsible, and under-employed. QuickBuck gives them a first taste of meaningful work — not minimum-wage drudgery." },
+  { title: "Dignity of work", body: "Every gig — from a 30-minute dog walk to a 2-hour sofa move — deserves real pay, on time, with respect. We design every flow around that idea." },
   { title: "Radical transparency", body: "Every fee, every payout, every poster's rating is visible upfront. No fine print. No 'surge' pricing. No hidden markup." },
   { title: "Neighborhood-first", body: "The best gigs are the ones a 10-minute bike ride from home. We design everything around short radius, strong community, and real accountability." },
-  { title: "Safety isn't a feature", body: "It's the whole product. Verified parents, verified posters, live check-ins, escrow payments, 24/7 human support." },
+  { title: "Safety isn't a feature", body: "It's the whole product. ID-verified earners and posters, live trip sharing, escrow payments, in-app SOS, and 24/7 human support." },
 ];
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
             <span className="text-xs uppercase tracking-[0.22em] text-olive font-semibold">About QuickBuck</span>
             <h1 className="mt-8 font-display font-bold text-balance leading-[0.88] tracking-[-0.04em] max-w-6xl"
                 style={{ fontSize: "clamp(56px, 10vw, 176px)" }}>
-              We're building the <span className="text-olive italic font-light" style={{fontFamily:"'Bricolage Grotesque', serif"}}>first job</span> a million teens will ever have.
+              The fastest way to <span className="text-olive italic font-light" style={{fontFamily:"'Bricolage Grotesque', serif"}}>earn</span> a buck in your neighbourhood.
             </h1>
           </FadeIn>
         </div>
@@ -33,12 +33,12 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn delay={0.1} className="lg:col-span-8 space-y-6 text-xl md:text-2xl leading-[1.35] text-ink/85 text-balance">
             <p>
-              The traditional "teen job" is broken. Babysitting depends on who your parents know. Lemonade stands don't scale.
-              Part-time retail jobs are hard to get, harder to schedule, and pay you two weeks late.
+              The traditional path to side income is slow and gate-kept. Walk-in part-time work is hard to find, harder to schedule, and pays you weeks late.
+              Online gig platforms abstract away the neighbourhood entirely.
             </p>
             <p className="text-ink/60">
               Meanwhile, your neighbour has a sofa that needs moving, a dog that needs walking, and a Jio router they can't figure out.
-              They'd happily pay ₹250 cash — right now — for someone to just show up.
+              They'd happily pay ₹250 cash — right now — for someone nearby to just show up.
             </p>
             <p className="text-olive font-semibold">
               QuickBuck is the bridge.

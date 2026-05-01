@@ -37,7 +37,7 @@ class StatusCheckCreate(BaseModel):
 
 class WaitlistCreate(BaseModel):
     email: EmailStr
-    role: Optional[str] = "teen"  # "teen" or "poster"
+    role: Optional[str] = "earner"  # "earner" or "poster"
     source: Optional[str] = "homepage"
 
 
@@ -45,7 +45,7 @@ class WaitlistEntry(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     email: str
-    role: str = "teen"
+    role: str = "earner"
     source: str = "homepage"
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
@@ -100,7 +100,7 @@ async def join_waitlist(payload: WaitlistCreate):
         return WaitlistEntry(**existing)
     entry = WaitlistEntry(
         email=email,
-        role=payload.role or "teen",
+        role=payload.role or "earner",
         source=payload.source or "homepage",
     )
     await db.waitlist.insert_one(entry.model_dump())
@@ -110,8 +110,7 @@ async def join_waitlist(payload: WaitlistCreate):
 @api_router.get("/waitlist/count")
 async def waitlist_count():
     count = await db.waitlist.count_documents({})
-    # Return a friendly inflated display count for social proof seed
-    return {"count": count, "display": max(count, 0) + 2847}
+    return {"count": count}
 
 
 # Contact

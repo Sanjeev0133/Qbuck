@@ -18,7 +18,7 @@ export default function ForPostersPage() {
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="mt-10 text-xl md:text-2xl text-ink/70 max-w-2xl leading-relaxed">
-              Post a task. A verified teen in your neighborhood shows up in minutes. You pay only when it's done right.
+              Post a task. A verified earner in your neighbourhood shows up. You only pay when it's done right.
             </p>
           </FadeIn>
         </div>
@@ -30,8 +30,8 @@ export default function ForPostersPage() {
           <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { step: "01", title: "Post a task", body: "Describe the task, set a fair price, attach a photo if it helps. Takes under 30 seconds." },
-              { step: "02", title: "Match in minutes", body: "Verified teens nearby see your gig and can accept. You see their rating and past reviews before confirming." },
-              { step: "03", title: "Pay on completion", body: "The funds are held in escrow. When you confirm the task is done, they release instantly. Not a cent before." },
+              { step: "02", title: "Match nearby", body: "Verified earners nearby see your gig and can accept. You see their rating and past reviews before confirming." },
+              { step: "03", title: "Pay on completion", body: "Funds are held in escrow. When you confirm the task is done, they release instantly. Not a rupee before." },
             ].map((s, i) => (
               <StaggerItem key={s.step}>
                 <div className="border border-black/5 rounded-4xl p-8 md:p-10 h-full bg-sand-light/50">
@@ -61,12 +61,12 @@ export default function ForPostersPage() {
 
           <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-sand-light/10 rounded-3xl overflow-hidden">
             {[
-              { title: "Average match time", value: "7 min", sub: "From post to 'accepted'" },
-              { title: "Average savings", value: "46%", sub: "Versus equivalent pro services" },
-              { title: "Completion rate", value: "98.2%", sub: "Across our pilot neighborhoods" },
-              { title: "Every teen is", value: "Age-verified", sub: "Parental consent on file" },
-              { title: "Your payment is", value: "Protected", sub: "Held in escrow, released on confirm" },
-              { title: "Service fee", value: "9%", sub: "Transparent. No hidden markup." },
+              { title: "Every earner is", value: "ID-verified", sub: "Government ID on file before any gig" },
+              { title: "Your payment is", value: "Protected", sub: "Held in escrow, released only on confirm" },
+              { title: "Pricing is", value: "Upfront", sub: "Set the price you want to pay. No surge." },
+              { title: "Disputes are", value: "Covered", sub: "Two-way ratings + 24/7 human support" },
+              { title: "Match radius is", value: "Local", sub: "Earners within 0.5 – 3 km of your address" },
+              { title: "Service fee is", value: "Transparent", sub: "Small flat percentage. No hidden markup." },
             ].map((c) => (
               <FadeIn key={c.title}>
                 <div className="bg-ink p-8 h-full">
@@ -106,11 +106,11 @@ export default function ForPostersPage() {
           <FadeIn>
             <h2 className="font-display font-bold text-balance leading-[0.9] tracking-[-0.04em]"
                 style={{ fontSize: "clamp(40px, 6.5vw, 96px)" }}>
-              Your to-do list. <br /><span className="text-olive-light">Done by Tuesday.</span>
+              Your to-do list. <br /><span className="text-olive-light">Done by tonight.</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-sand-light/70 text-lg mb-6 max-w-md">Join the early access list and get 3 free task posts when we launch in your area.</p>
+            <p className="text-sand-light/70 text-lg mb-6 max-w-md">Join the early access list and post your first 3 gigs free when we open in your area.</p>
             <WaitlistForm variant="dark" role="poster" source="for-posters" testidPrefix="posters-waitlist" />
           </FadeIn>
         </div>

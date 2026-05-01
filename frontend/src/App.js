@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import HowItWorksPage from "./pages/HowItWorksPage";
-import ForTeensPage from "./pages/ForTeensPage";
+import ForEarnersPage from "./pages/ForEarnersPage";
 import ForPostersPage from "./pages/ForPostersPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -18,7 +18,8 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/how-it-works" element={<HowItWorksPage />} />
-            <Route path="/for-teens" element={<ForTeensPage />} />
+            <Route path="/for-earners" element={<ForEarnersPage />} />
+            <Route path="/for-teens" element={<ForEarnersPage />} />
             <Route path="/for-posters" element={<ForPostersPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />

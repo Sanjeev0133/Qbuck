@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { ArrowRight, ArrowUpRight, Zap, Shield, Clock, MapPin, Sparkles, Banknote, Hand } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import WaitlistForm from "../components/WaitlistForm";
 import AppStoreBadges from "../components/AppStoreBadges";
 import { FadeIn, Stagger, StaggerItem } from "../components/Motion";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const HERO_IMG = "https://images.unsplash.com/photo-1758812925626-e30b5b345582?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwzfHx0ZWVuYWdlciUyMHVzaW5nJTIwcGhvbmUlMjBvdXRkb29yfGVufDB8fHx8MTc3NzYyNDExMHww&ixlib=rb-4.1.0&q=85";
 const IMG_TECH = "https://images.unsplash.com/photo-1761499413046-08ac70109128?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwxfHx0ZWVuYWdlciUyMHVzaW5nJTIwcGhvbmUlMjBvdXRkb29yfGVufDB8fHx8MTc3NzYyNDExMHww&ixlib=rb-4.1.0&q=85";
@@ -27,15 +24,10 @@ const CATEGORIES = [
 ];
 
 export default function HomePage() {
-  const [count, setCount] = useState(2847);
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 600], [0, 140]);
   const heroScale = useTransform(scrollY, [0, 600], [1, 1.08]);
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0.35]);
-
-  useEffect(() => {
-    axios.get(`${API}/waitlist/count`).then((r) => setCount(r.data.display)).catch(() => {});
-  }, []);
 
   return (
     <div data-testid="home-page">
@@ -47,7 +39,7 @@ export default function HomePage() {
         >
           <img
             src={HERO_IMG}
-            alt="Teen earning money outside"
+            alt="Person on phone outdoors"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/40 to-ink" />
@@ -88,7 +80,7 @@ export default function HomePage() {
               transition={{ duration: 0.9, delay: 0.5 }}
               className="mt-10 max-w-xl text-lg md:text-xl text-sand-light/80 leading-relaxed"
             >
-              The app where teens earn real money for everyday gigs in the neighborhood. Safe, local, and fast —
+              The app where anyone can earn real money for everyday gigs in their neighbourhood. Local, fast, and fair —
               get paid the second the job is done.
             </motion.p>
 
@@ -120,10 +112,10 @@ export default function HomePage() {
           >
             <div className="flex items-center gap-6 flex-wrap">
               <span className="inline-flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-olive-light" />
-                <strong className="text-sand-light font-semibold">{count.toLocaleString()}</strong> on the waitlist
+                <span className="w-2 h-2 rounded-full bg-olive-light animate-pulse" />
+                Early access opening soon
               </span>
-              <span className="hidden md:inline">Parental consent built in</span>
+              <span className="hidden md:inline">Verified earners & posters</span>
               <span className="hidden md:inline">Secure payouts via UPI & Razorpay</span>
             </div>
             <div className="hidden md:flex items-center gap-2 text-xs uppercase tracking-[0.22em]">
@@ -162,18 +154,18 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.15} className="lg:col-span-5">
               <p className="text-lg md:text-xl text-ink/70 leading-relaxed max-w-xl">
-                Teens don't want lectures about hustle. They want a way to earn cash between school, sports, and weekends —
-                without waiting two weeks for a paycheck. That's QuickBuck.
+                People don't need lectures about hustle. They need a fast, fair way to pick up local work between meetings, classes, and weekends —
+                without waiting two weeks for a payout. That's QuickBuck.
               </p>
             </FadeIn>
           </div>
 
           <Stagger className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Zap, title: "Paid instantly", desc: "The second a task ends, cash hits your account. No 'net 30.' No waiting." },
+              { icon: Zap, title: "Paid instantly", desc: "The second a task ends, cash hits your wallet. No 'net 30.' No salary delays." },
               { icon: MapPin, title: "Hyper-local", desc: "Gigs within a 3 km radius. Walk, cycle, or auto there in minutes." },
-              { icon: Shield, title: "Parent-verified", desc: "Every teen is age-verified with parental consent. Every poster is ID-checked." },
-              { icon: Clock, title: "Fits your schedule", desc: "Browse open gigs, accept what works. No shifts, no quotas." },
+              { icon: Shield, title: "Verified both ways", desc: "Every earner and poster is ID-verified. Ratings, reviews, and dispute protection on every gig." },
+              { icon: Clock, title: "Fits your schedule", desc: "Browse open gigs, accept what works. No fixed shifts, no quotas, no obligations." },
             ].map((f) => (
               <StaggerItem key={f.title}>
                 <div className="group bg-white border border-black/5 rounded-3xl p-8 h-full hover:border-olive/40 transition-all duration-500">
@@ -216,7 +208,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-sand-light/10 rounded-3xl overflow-hidden">
             {[
-              { step: "01", title: "Browse gigs", desc: "Open QuickBuck. See a live feed of paying tasks nearby — filtered to your age and radius." , icon: Hand },
+              { step: "01", title: "Browse gigs", desc: "Open QuickBuck. See a live feed of paying tasks nearby — filtered to your skills and radius." , icon: Hand },
               { step: "02", title: "Accept task", desc: "Tap to accept. Chat with the poster. Get turn-by-turn directions to the gig.", icon: Sparkles },
               { step: "03", title: "Get paid", desc: "Finish the job. Poster confirms. Cash lands in your QuickBuck wallet — instantly.", icon: Banknote },
             ].map((s, i) => (
@@ -308,7 +300,7 @@ export default function HomePage() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
-              <span className="text-xs uppercase tracking-[0.22em] text-olive-light font-semibold">Built with parents in mind</span>
+              <span className="text-xs uppercase tracking-[0.22em] text-olive-light font-semibold">Trust isn't optional</span>
               <h2 className="mt-5 font-display font-bold text-balance leading-[0.95] tracking-[-0.035em]"
                   style={{ fontSize: "clamp(40px, 6vw, 88px)" }}>
                 Safe by default.
@@ -316,16 +308,16 @@ export default function HomePage() {
                 <span className="text-sand-light/60">Trusted by design.</span>
               </h2>
               <p className="mt-8 text-lg text-sand-light/75 leading-relaxed max-w-xl">
-                Every teen account requires a verified parent. Every task poster is ID-checked. Every dollar moves through a PCI-compliant wallet.
+                Every account is ID-verified. Every payment moves through a PCI-compliant escrow wallet. Every gig is rated both ways.
               </p>
 
               <ul className="mt-10 space-y-4">
                 {[
-                  "Parental consent flow built in at signup",
+                  "Government ID verification at signup",
                   "Background-checked task posters",
-                  "In-app safety check-ins and live location",
-                  "Instant dispute and refund protection",
-                  "Weekly earnings report sent to parents",
+                  "In-app live trip sharing & SOS",
+                  "Funds held in escrow until you confirm",
+                  "Two-way ratings build a transparent reputation",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3 text-sand-light/90">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-olive-light shrink-0" />
@@ -337,12 +329,12 @@ export default function HomePage() {
 
             <FadeIn delay={0.15}>
               <div className="relative aspect-[4/5] rounded-4xl overflow-hidden">
-                <img src={IMG_CASH} alt="Teen with phone and cash" className="w-full h-full object-cover" />
+                <img src={IMG_CASH} alt="Earner with phone and cash" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-ink/50 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8 glass-dark rounded-2xl p-5 border border-sand-light/10">
-                  <p className="text-xs uppercase tracking-[0.22em] text-olive-light mb-2">Live stat</p>
-                  <p className="font-display text-2xl font-semibold tracking-tight">₹420 earned today</p>
-                  <p className="text-sand-light/60 text-sm mt-1">Across 3 gigs · Paid to wallet instantly</p>
+                  <p className="text-xs uppercase tracking-[0.22em] text-olive-light mb-2">Sample wallet</p>
+                  <p className="font-display text-2xl font-semibold tracking-tight">Earnings land instantly</p>
+                  <p className="text-sand-light/60 text-sm mt-1">Across every completed gig · Paid to wallet on confirm</p>
                 </div>
               </div>
             </FadeIn>
@@ -357,15 +349,15 @@ export default function HomePage() {
             <span className="text-xs uppercase tracking-[0.22em] text-olive font-semibold">The early crew</span>
             <h2 className="mt-5 font-display font-bold text-balance leading-[0.95] tracking-[-0.035em] max-w-4xl"
                 style={{ fontSize: "clamp(36px, 5.5vw, 80px)" }}>
-              Teens are making real money. Posters are finally getting help.
+              Earners are picking up real work. Posters are finally getting help.
             </h2>
           </FadeIn>
 
           <Stagger className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { quote: "I made ₹1,200 over a weekend just walking dogs on my street. My parents love it more than I do.", name: "Aanya, 16", tag: "Teen earner" },
-              { quote: "I posted a 'help me move a sofa' gig at 6pm. Two teens showed up at 6:30. Done by 7.", name: "Rohan, 34", tag: "Task poster" },
-              { quote: "The parent dashboard is brilliant. I can see where my son is, what he's earning, and when he's home.", name: "Priya, parent", tag: "Verified guardian" },
+              { quote: "Picked up four dog-walking gigs last weekend in my colony. Paid into UPI before I got home.", name: "Aanya", tag: "Earner · Bengaluru" },
+              { quote: "I posted a 'help me move a sofa' gig at 6pm. Two earners showed up at 6:30. Done by 7.", name: "Rohan", tag: "Poster · Mumbai" },
+              { quote: "Verified IDs, escrow payments, and a real human on support. That's what convinced me.", name: "Priya", tag: "Earner · Delhi NCR" },
             ].map((q, i) => (
               <StaggerItem key={i}>
                 <blockquote className="bg-white border border-black/5 rounded-3xl p-8 h-full flex flex-col justify-between">
@@ -396,8 +388,8 @@ export default function HomePage() {
                   Be first in line.
                 </h2>
                 <p className="mt-8 text-xl md:text-2xl text-sand-light/85 max-w-2xl leading-relaxed">
-                  Join {count.toLocaleString()}+ teens and parents already on the QuickBuck waitlist.
-                  Early access drops early 2026.
+                  Join the QuickBuck early access list and we'll let you in the second your area opens up.
+                  Launch begins early 2026.
                 </p>
               </FadeIn>
             </div>

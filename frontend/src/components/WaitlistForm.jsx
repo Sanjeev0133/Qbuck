@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
-export default function WaitlistForm({ variant = "light", role = "teen", source = "homepage", testidPrefix = "waitlist" }) {
+export default function WaitlistForm({ variant = "light", role = "earner", source = "homepage", testidPrefix = "waitlist" }) {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);

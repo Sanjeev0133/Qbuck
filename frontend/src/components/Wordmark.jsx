@@ -1,8 +1,39 @@
 import React from "react";
 
 /**
- * QuickBuck wordmark — olive green + black color blocking
- * Matches the uploaded logo style: bold sans, color-split letters.
+ * QuickBuck logo lock-up: QB icon + wordmark.
+ * Used in the navbar.
+ */
+export const Logo = ({ className = "", variant = "light", showText = true }) => {
+  const onDark = variant === "dark";
+  const ink = onDark ? "#F2EFE9" : "#0A0A0A";
+  const olive = onDark ? "#9BAA4F" : "#4B5320";
+
+  return (
+    <span
+      className={`inline-flex items-center gap-2 font-display font-extrabold tracking-[-0.045em] leading-none ${className}`}
+      aria-label="QuickBuck"
+      data-testid="quickbuck-logo"
+    >
+      <img
+        src="/qb-icon.png"
+        alt=""
+        aria-hidden
+        className="h-[1.5em] w-auto select-none"
+        draggable={false}
+      />
+      {showText && (
+        <span className="inline-flex items-baseline">
+          <span style={{ color: ink }}>Quick</span>
+          <span style={{ color: olive }}>Buck</span>
+        </span>
+      )}
+    </span>
+  );
+};
+
+/**
+ * Big typographic wordmark — used in the footer hero.
  */
 export const Wordmark = ({ className = "", variant = "light" }) => {
   const onDark = variant === "dark";
@@ -26,4 +57,4 @@ export const Wordmark = ({ className = "", variant = "light" }) => {
   );
 };
 
-export default Wordmark;
+export default Logo;
