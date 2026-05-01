@@ -51,3 +51,15 @@
 - P2: Parent-specific landing page
 - P2: Spanish locale
 - P2: Rate limiting on public POST endpoints
+
+## 2026-05-01 — India localization
+- Wordmark updated: "quickbuck" → "QuickBuck" (Navbar + Footer)
+- Currency: all $ → ₹ across HomePage, ForTeensPage (categories, earning examples, live stat ₹420, weekend total ₹1,540, Aanya's weekend ₹1,200)
+- Distance: miles → km (3 km radius, 0.5–3 km range)
+- Payments: "Stripe" → "UPI & Razorpay"
+- HQ: Austin → Bengaluru; Mumbai & Delhi NCR teams
+- Competitor reference: TaskRabbit → Urban Company
+- Task examples: added Set up Jio router, Xerox & courier, Rangoli for Diwali
+- Testimonials: Maya → Aanya, Daniel → Rohan
+- Furniture/Wi-Fi: couch → sofa, Wi-Fi router → Jio router
+- Launch wording: Spring 2026 → early 2026
