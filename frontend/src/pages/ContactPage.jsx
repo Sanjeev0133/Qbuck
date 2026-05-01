@@ -73,7 +73,7 @@ export default function ContactPage() {
               <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">HQ</p>
               <p className="font-display text-xl tracking-tight inline-flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-olive" />
-                Austin, TX — with teams in LA & NYC
+                Bengaluru, KA — with teams in Mumbai & Delhi NCR
               </p>
             </div>
             <div className="border-t border-black/10 pt-8">

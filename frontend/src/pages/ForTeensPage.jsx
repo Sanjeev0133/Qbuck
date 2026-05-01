@@ -32,7 +32,7 @@ export default function ForTeensPage() {
       <section className="bg-ink text-sand-light py-20 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { big: "$42", sub: "Average earned per hour on QuickBuck gigs" },
+            { big: "₹350", sub: "Average earned per hour on QuickBuck gigs" },
             { big: "< 60s", sub: "From 'task complete' to cash in your wallet" },
             { big: "14 min", sub: "Median distance from home to your first gig" },
           ].map((s, i) => (
@@ -84,17 +84,17 @@ export default function ForTeensPage() {
             <span className="text-xs uppercase tracking-[0.22em] text-olive-light font-semibold">Realistic weekend</span>
             <h2 className="mt-5 font-display font-bold text-balance leading-[0.95] tracking-[-0.035em] max-w-3xl"
                 style={{ fontSize: "clamp(36px, 5.5vw, 80px)" }}>
-              One Saturday. Five gigs. $184.
+              One Saturday. Five gigs. ₹1,540.
             </h2>
           </FadeIn>
 
           <Stagger className="mt-16 grid grid-cols-1 md:grid-cols-5 gap-4">
             {[
-              { time: "9:00 AM", task: "Walk two dogs", pay: "$24" },
-              { time: "11:30 AM", task: "Help set up Wi-Fi", pay: "$45" },
-              { time: "1:00 PM", task: "Mow front lawn", pay: "$35" },
-              { time: "4:15 PM", task: "Grocery delivery run", pay: "$22" },
-              { time: "6:00 PM", task: "Babysit for 3 hrs", pay: "$58" },
+              { time: "9:00 AM", task: "Walk two dogs", pay: "₹200" },
+              { time: "11:30 AM", task: "Help set up Wi-Fi", pay: "₹380" },
+              { time: "1:00 PM", task: "Mow front lawn", pay: "₹300" },
+              { time: "4:15 PM", task: "Grocery delivery run", pay: "₹180" },
+              { time: "6:00 PM", task: "Babysit for 3 hrs", pay: "₹480" },
             ].map((g, i) => (
               <StaggerItem key={i}>
                 <div className="border border-sand-light/10 rounded-3xl p-6 h-full bg-ink hover:bg-olive hover:border-olive transition-colors duration-500">

@@ -15,8 +15,8 @@ export const Wordmark = ({ className = "", variant = "light" }) => {
       aria-label="QuickBuck"
       data-testid="quickbuck-wordmark"
     >
-      <span style={{ color: ink }}>quick</span>
-      <span style={{ color: olive }}>buck</span>
+      <span style={{ color: ink }}>Quick</span>
+      <span style={{ color: olive }}>Buck</span>
       <span
         className="ml-[0.18em] inline-block h-[0.42em] w-[0.42em] rounded-full"
         style={{ backgroundColor: olive }}

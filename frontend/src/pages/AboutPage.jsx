@@ -37,8 +37,8 @@ export default function AboutPage() {
               Part-time retail jobs are hard to get, harder to schedule, and pay you two weeks late.
             </p>
             <p className="text-ink/60">
-              Meanwhile, your neighbor has a couch that needs moving, a dog that needs walking, and a Wi-Fi router they can't figure out.
-              They'd happily pay $30 cash — right now — for someone to just show up.
+              Meanwhile, your neighbour has a sofa that needs moving, a dog that needs walking, and a Jio router they can't figure out.
+              They'd happily pay ₹250 cash — right now — for someone to just show up.
             </p>
             <p className="text-olive font-semibold">
               QuickBuck is the bridge.
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
           <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "Rohan M.", role: "Co-founder / CEO", bio: "Grew up mowing lawns for $5. Now building the app he wishes he'd had at 15." },
+              { name: "Rohan M.", role: "Co-founder / CEO", bio: "Grew up mowing lawns for ₹50. Now building the app he wishes he'd had at 15." },
               { name: "Aisha K.", role: "Co-founder / CTO", bio: "Ex-fintech. Obsessed with instant settlement and making trust scale." },
               { name: "Sam P.", role: "Head of Trust & Safety", bio: "Former child-safety advisor. Every safety feature goes through him first." },
             ].map((p, i) => (

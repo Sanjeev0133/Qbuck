@@ -55,7 +55,7 @@ export default function ForPostersPage() {
             <span className="text-xs uppercase tracking-[0.22em] text-olive-light font-semibold">Why post here</span>
             <h2 className="mt-5 font-display font-bold text-balance leading-[0.95] tracking-[-0.035em] max-w-3xl"
                 style={{ fontSize: "clamp(36px, 5.5vw, 80px)" }}>
-              Faster than TaskRabbit. Cheaper than an agency.
+              Faster than Urban Company. Cheaper than an agency.
             </h2>
           </FadeIn>
 
@@ -91,7 +91,7 @@ export default function ForPostersPage() {
           </FadeIn>
 
           <div className="mt-16 flex flex-wrap gap-3">
-            {["Mow my lawn","Walk the dog","Rake leaves","Shovel snow","Help set up Wi-Fi","Carry groceries","Assemble IKEA","Water plants 1 week","Wash the car","Babysit 2 hrs","Move a couch","Clean the garage","Print & mail package","Return Amazon box","Pet sit weekend"].map((t) => (
+            {["Mow my lawn","Walk the dog","Rake leaves","Set up Jio router","Help with Wi-Fi","Carry groceries","Assemble IKEA","Water plants 1 week","Wash the car","Babysit 2 hrs","Move a sofa","Clean the garage","Xerox & courier","Return Amazon box","Pet sit weekend","Rangoli for Diwali"].map((t) => (
               <span key={t} className="px-5 py-3 rounded-full bg-white border border-black/10 text-sm font-medium hover:border-olive hover:bg-olive hover:text-sand-light transition-all cursor-default">
                 {t}
               </span>

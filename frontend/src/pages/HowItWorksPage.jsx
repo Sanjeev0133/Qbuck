@@ -14,7 +14,7 @@ const STEPS = [
     num: "02",
     title: "Browse nearby gigs",
     body: "Open the live map. Filter by distance, payout, and category. Every gig shows the full price, location, and the poster's rating.",
-    details: ["Radius: 0.25 – 2 miles", "Upfront pricing — no hidden fees", "Poster identity verified"],
+    details: ["Radius: 0.5 – 3 km", "Upfront pricing — no hidden fees", "Poster identity verified"],
   },
   {
     num: "03",

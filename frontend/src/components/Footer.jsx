@@ -76,7 +76,7 @@ export default function Footer() {
             className="font-display font-extrabold leading-none tracking-[-0.06em] select-none"
             style={{ fontSize: "clamp(64px, 18vw, 280px)" }}
           >
-            <span className="text-sand-light">quick</span><span className="text-olive-light">buck</span>
+            <span className="text-sand-light">Quick</span><span className="text-olive-light">Buck</span>
           </div>
         </div>
 

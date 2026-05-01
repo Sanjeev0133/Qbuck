@@ -16,14 +16,14 @@ const IMG_CASH = "https://images.unsplash.com/photo-1633504214759-e1013f422ed7?c
 const IMG_APP = "https://static.prod-images.emergentagent.com/jobs/42615750-0951-4498-b028-ddddca2ee976/images/07983b11bcc012e8b989ff34704f1cf9c19f17c5de5911e09ebcd9adec5d7fd1.png";
 
 const CATEGORIES = [
-  { title: "Dog walking", avg: "$18 / walk", icon: "🐕", img: IMG_DOG },
-  { title: "Lawn mowing", avg: "$35 / yard", icon: "🌿" },
-  { title: "Tech help", avg: "$25 / hr", icon: "💻" },
-  { title: "Babysitting", avg: "$22 / hr", icon: "👶" },
-  { title: "Car wash", avg: "$28 / car", icon: "🚗" },
-  { title: "Moving help", avg: "$40 / hr", icon: "📦" },
-  { title: "Tutoring", avg: "$30 / hr", icon: "📚" },
-  { title: "Delivery run", avg: "$15 / run", icon: "🛍️" },
+  { title: "Dog walking", avg: "₹150 / walk", icon: "🐕", img: IMG_DOG },
+  { title: "Lawn mowing", avg: "₹300 / yard", icon: "🌿" },
+  { title: "Tech help", avg: "₹200 / hr", icon: "💻" },
+  { title: "Babysitting", avg: "₹180 / hr", icon: "👶" },
+  { title: "Car wash", avg: "₹250 / car", icon: "🚗" },
+  { title: "Moving help", avg: "₹350 / hr", icon: "📦" },
+  { title: "Tutoring", avg: "₹250 / hr", icon: "📚" },
+  { title: "Delivery run", avg: "₹120 / run", icon: "🛍️" },
 ];
 
 export default function HomePage() {
@@ -124,7 +124,7 @@ export default function HomePage() {
                 <strong className="text-sand-light font-semibold">{count.toLocaleString()}</strong> on the waitlist
               </span>
               <span className="hidden md:inline">Parental consent built in</span>
-              <span className="hidden md:inline">Secure payouts via Stripe</span>
+              <span className="hidden md:inline">Secure payouts via UPI & Razorpay</span>
             </div>
             <div className="hidden md:flex items-center gap-2 text-xs uppercase tracking-[0.22em]">
               <span>Scroll</span>
@@ -171,7 +171,7 @@ export default function HomePage() {
           <Stagger className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Zap, title: "Paid instantly", desc: "The second a task ends, cash hits your account. No 'net 30.' No waiting." },
-              { icon: MapPin, title: "Hyper-local", desc: "Gigs within a 2-mile radius. Walk, skate, or bike there in minutes." },
+              { icon: MapPin, title: "Hyper-local", desc: "Gigs within a 3 km radius. Walk, cycle, or auto there in minutes." },
               { icon: Shield, title: "Parent-verified", desc: "Every teen is age-verified with parental consent. Every poster is ID-checked." },
               { icon: Clock, title: "Fits your schedule", desc: "Browse open gigs, accept what works. No shifts, no quotas." },
             ].map((f) => (
@@ -259,7 +259,7 @@ export default function HomePage() {
                   <div>
                     <p className="text-sm text-sand-light/70 mb-2">Dog walking</p>
                     <h3 className="font-display font-bold text-balance leading-[0.95]" style={{ fontSize: "clamp(36px, 5vw, 64px)" }}>
-                      $18 per walk.
+                      ₹150 per walk.
                       <br />Paid on leash-down.
                     </h3>
                   </div>
@@ -272,7 +272,7 @@ export default function HomePage() {
                 <div className="text-6xl">🌿</div>
                 <div>
                   <p className="font-display text-3xl font-semibold tracking-tight">Lawn mowing</p>
-                  <p className="text-sand-light/75 text-sm mt-1">$35 per yard · 1–2 hrs</p>
+                  <p className="text-sand-light/75 text-sm mt-1">₹300 per yard · 1–2 hrs</p>
                 </div>
               </div>
             </FadeIn>
@@ -283,7 +283,7 @@ export default function HomePage() {
                 <div className="relative text-6xl">💻</div>
                 <div className="relative">
                   <p className="font-display text-3xl font-semibold tracking-tight">Tech help</p>
-                  <p className="text-ink/65 text-sm mt-1">$25 / hr · Wi-Fi, phones, apps</p>
+                  <p className="text-ink/65 text-sm mt-1">₹200 / hr · Wi-Fi, phones, apps</p>
                 </div>
               </div>
             </FadeIn>
@@ -341,7 +341,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-ink/50 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8 glass-dark rounded-2xl p-5 border border-sand-light/10">
                   <p className="text-xs uppercase tracking-[0.22em] text-olive-light mb-2">Live stat</p>
-                  <p className="font-display text-2xl font-semibold tracking-tight">$47.50 earned today</p>
+                  <p className="font-display text-2xl font-semibold tracking-tight">₹420 earned today</p>
                   <p className="text-sand-light/60 text-sm mt-1">Across 3 gigs · Paid to wallet instantly</p>
                 </div>
               </div>
@@ -363,8 +363,8 @@ export default function HomePage() {
 
           <Stagger className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { quote: "I made $142 over a weekend just walking dogs on my block. My parents love it more than I do.", name: "Maya, 16", tag: "Teen earner" },
-              { quote: "I posted a 'help me move a couch' gig at 6pm. Two teens showed up at 6:30. Done by 7.", name: "Daniel, 34", tag: "Task poster" },
+              { quote: "I made ₹1,200 over a weekend just walking dogs on my street. My parents love it more than I do.", name: "Aanya, 16", tag: "Teen earner" },
+              { quote: "I posted a 'help me move a sofa' gig at 6pm. Two teens showed up at 6:30. Done by 7.", name: "Rohan, 34", tag: "Task poster" },
               { quote: "The parent dashboard is brilliant. I can see where my son is, what he's earning, and when he's home.", name: "Priya, parent", tag: "Verified guardian" },
             ].map((q, i) => (
               <StaggerItem key={i}>
@@ -397,7 +397,7 @@ export default function HomePage() {
                 </h2>
                 <p className="mt-8 text-xl md:text-2xl text-sand-light/85 max-w-2xl leading-relaxed">
                   Join {count.toLocaleString()}+ teens and parents already on the QuickBuck waitlist.
-                  Early access drops Spring 2026.
+                  Early access drops early 2026.
                 </p>
               </FadeIn>
             </div>
