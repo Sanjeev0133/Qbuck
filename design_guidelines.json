@@ -1,0 +1,133 @@
+{
+  "project_name": "QuickBuck",
+  "theme_and_archetype": {
+    "domain": "Startup / Marketplace",
+    "theme": "Hybrid (Light/Dark Cinematic)",
+    "archetype": "Archetype 1 (Organic & Earthy) blended with Apple-like Cinematic Minimalism",
+    "description": "A premium, Apple-like marketing site. Cinematic full-bleed visuals, smooth scrolling (Lenis), and highly polished typography. Combines a youthful energy for teens with the trust and reliability needed for task posters. The aesthetic relies heavily on the requested color palette: Olive Green, Black, and Dusky Sand."
+  },
+  "colors": {
+    "brand": {
+      "primary": "#4B5320",
+      "primary_hover": "#3A4019",
+      "primary_light": "#6B7533",
+      "black": "#0A0A0A",
+      "dusky_sand": "#E5DFD3",
+      "dusky_sand_light": "#F2EFE9",
+      "dusky_sand_dark": "#C2BCAE"
+    },
+    "surface": {
+      "background_light": "#F2EFE9",
+      "background_dark": "#0A0A0A",
+      "card_light": "#FFFFFF",
+      "card_dark": "#1A1A1A"
+    },
+    "text": {
+      "primary_on_light": "#0A0A0A",
+      "secondary_on_light": "#4A4A4A",
+      "primary_on_dark": "#F2EFE9",
+      "secondary_on_dark": "#A3A3A3",
+      "accent": "#4B5320"
+    }
+  },
+  "typography": {
+    "strategy": "The 'Editorial Future' pairing. Distinctive, modern, and cinematic. Avoid generic sans like Inter.",
+    "fonts": {
+      "headings": "Cabinet Grotesk, sans-serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-none font-bold",
+      "h2": "text-4xl md:text-5xl tracking-tight leading-tight font-bold",
+      "h3": "text-2xl md:text-3xl tracking-tight font-semibold",
+      "body_large": "text-lg md:text-xl leading-relaxed",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm tracking-wide uppercase"
+    },
+    "rules": [
+      "Headings strictly use tracking-tight or tracking-tighter.",
+      "Never center-align large paragraphs of text.",
+      "Use massive typographic contrast between headings and body text."
+    ]
+  },
+  "spacing_and_layout": {
+    "strategy": "Generous Spacing Philosophy. Apple-like breathing room.",
+    "container": "max-w-7xl mx-auto px-6 md:px-12 lg:px-24",
+    "section_padding": "py-24 md:py-32 lg:py-48",
+    "grid_system": {
+      "bento_marketing": "grid-cols-1 md:grid-cols-12 gap-8 md:gap-12"
+    },
+    "rules": [
+      "Use sections with alternating backgrounds (Dusky Sand to True Black) for cinematic contrast.",
+      "Images must often break the grid or be full-bleed.",
+      "Containers with borders must have internal padding (p-8 or p-12)."
+    ]
+  },
+  "surfaces_and_effects": {
+    "glassmorphism": {
+      "nav": "backdrop-blur-xl bg-dusky_sand_light/80 border-b border-black/5 dark:bg-black/60 dark:border-white/10"
+    },
+    "cards": {
+      "style": "Flat solid surfaces. Subtle 1px borders (border-black/10). No muddy drop shadows. Use rounded-2xl or rounded-3xl for a modern premium feel."
+    },
+    "buttons": {
+      "primary": "bg-[#4B5320] text-[#F2EFE9] rounded-full px-8 py-4 font-semibold hover:bg-[#3A4019] transition-colors duration-300",
+      "secondary": "bg-[#0A0A0A] text-[#F2EFE9] rounded-full px-8 py-4 font-semibold hover:bg-black/80 transition-colors duration-300",
+      "outline": "border-2 border-[#0A0A0A] text-[#0A0A0A] rounded-full px-8 py-4 font-semibold hover:bg-[#0A0A0A] hover:text-[#F2EFE9] transition-all duration-300"
+    }
+  },
+  "motion_and_interactions": {
+    "scroll": "MANDATORY: Use Lenis for smooth scrolling. This is critical for the Apple-like feel.",
+    "animations": {
+      "fade_up": "Use Framer Motion to fade up and slightly translate-y text elements as they enter the viewport.",
+      "parallax": "Apply subtle parallax effects to full-bleed hero images and background elements.",
+      "hover": "Scale images slightly (1.05) on hover within bento grid cards."
+    }
+  },
+  "media_and_assets": {
+    "logos": {
+      "brand": "https://customer-assets.emergentagent.com/job_instant-earnings-hub-1/artifacts/89jjk61l_quickbuck_1.pdf"
+    },
+    "images": [
+      {
+        "category": "hero",
+        "url": "https://images.unsplash.com/photo-1758812925626-e30b5b345582?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwzfHx0ZWVuYWdlciUyMHVzaW5nJTIwcGhvbmUlMjBvdXRkb29yfGVufDB8fHx8MTc3NzYyNDExMHww&ixlib=rb-4.1.0&q=85",
+        "description": "Teenager using phone outdoors. Hero section."
+      },
+      {
+        "category": "app_user",
+        "url": "https://static.prod-images.emergentagent.com/jobs/42615750-0951-4498-b028-ddddca2ee976/images/07983b11bcc012e8b989ff34704f1cf9c19f17c5de5911e09ebcd9adec5d7fd1.png",
+        "description": "Stylish modern teenager holding a smartphone showing a notification. Good for 'How it Works' or 'For Teens'."
+      },
+      {
+        "category": "gig_outdoor",
+        "url": "https://images.unsplash.com/photo-1728945049018-5db2d3f43610?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHw0fHxtb3dpbmclMjBsYXduJTIwb3IlMjBkb2clMjB3YWxraW5nfGVufDB8fHx8MTc3NzYyNDExMHww&ixlib=rb-4.1.0&q=85",
+        "description": "Person in a field with a dog. Good for gig categories (dog walking)."
+      },
+      {
+        "category": "gig_tech",
+        "url": "https://images.unsplash.com/photo-1761499413046-08ac70109128?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwxfHx0ZWVuYWdlciUyMHVzaW5nJTIwcGhvbmUlMjBvdXRkb29yfGVufDB8fHx8MTc3NzYyNDExMHww&ixlib=rb-4.1.0&q=85",
+        "description": "Young woman using phone with building in background."
+      },
+      {
+        "category": "lifestyle_cash",
+        "url": "https://images.unsplash.com/photo-1633504214759-e1013f422ed7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwyfHxjaW5lbWF0aWMlMjBoYXBweSUyMHRlZW5hZ2VyJTIwY2FzaHxlbnwwfHx8fDE3Nzc2MjQxMTB8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Woman holding cell phone and cash. Good for earnings/trust section."
+      }
+    ],
+    "icons": "lucide-react"
+  },
+  "component_instructions": {
+    "navigation": "Sticky crystal glass nav. Logo on left, links in center, 'Join Waitlist' CTA on right.",
+    "hero": "Full-bleed cinematic layout. Massive typography (Cabinet Grotesk). Headline: 'Small Tasks. Instant Cash.' Subhead: 'The app where teens earn real money for everyday gigs. Safe, local, and fast.' Waitlist email input + App Store badges.",
+    "how_it_works": "Scroll-triggered 3-step timeline. 1. Browse gigs. 2. Accept task. 3. Get paid instantly. Use Framer Motion for step reveals.",
+    "features_bento": "Asymmetric bento grid. Showcase gig categories (Lawn mowing, Dog walking, Tech help). Use rounded-3xl cards with Dusky Sand backgrounds and Olive Green accents.",
+    "trust_and_safety": "Black background section. High contrast. Typography in Dusky Sand. Emphasize parental consent, verified users, secure payments.",
+    "waitlist_form": "Simple, high-converting input field + submit button. Store in DB (mocked for frontend if no backend provided, but must be structured as a functional form).",
+    "footer": "Massive typography for 'QuickBuck'. Minimal links. Social icons. Dark background."
+  },
+  "testing": {
+    "data_testid": "MANDATORY: All interactive elements (buttons, inputs, links) must have data-testid attributes."
+  }
+}
