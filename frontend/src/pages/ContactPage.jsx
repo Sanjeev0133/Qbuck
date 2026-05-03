@@ -58,8 +58,8 @@ export default function ContactPage() {
           <FadeIn className="lg:col-span-5 space-y-8">
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">Email</p>
-              <a href="mailto:hello@quickbuck.in" className="font-display text-3xl md:text-4xl font-semibold tracking-tight hover:text-olive transition-colors inline-flex items-center gap-2" data-testid="contact-email-hello">
-                hello@quickbuck.in <Mail className="w-5 h-5" />
+              <a href="mailto:quickbuckindia@gmail.com" className="font-display text-3xl md:text-4xl font-semibold tracking-tight hover:text-olive transition-colors inline-flex items-center gap-2" data-testid="contact-email-hello">
+                quickbuckindia@gmail.com <Mail className="w-5 h-5" />
               </a>
               <p className="text-ink/60 mt-3">For general questions, partnerships, or to say hi.</p>
             </div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
               <p className="text-xs uppercase tracking-[0.22em] text-olive font-semibold mb-3">Where we are</p>
               <p className="font-display text-xl tracking-tight inline-flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-olive" />
-                Bengaluru, India
+                Hyderabad, India
               </p>
             </div>
           </FadeIn>

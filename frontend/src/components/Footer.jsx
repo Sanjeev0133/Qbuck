@@ -23,12 +23,12 @@ export default function Footer() {
             </p>
 
             <a
-              href="mailto:hello@quickbuck.in"
+              href="mailto:quickbuckindia@gmail.com"
               data-testid="footer-email-cta"
               className="mt-8 inline-flex items-center gap-2 rounded-full border border-sand/20 px-5 py-3 text-sm hover:bg-olive hover:border-olive transition-colors"
             >
               <Mail className="w-4 h-4" />
-              hello@quickbuck.in
+              quickbuckindia@gmail.com
             </a>
           </div>
 
@@ -58,7 +58,7 @@ export default function Footer() {
             className="h-20 md:h-24 w-auto opacity-95 bg-sand-light/95 rounded-2xl px-3 py-1"
             draggable={false}
           />
-          <p className="text-xs text-sand/50">Made in Bengaluru.</p>
+          <p className="text-xs text-sand/50">Made in Hyderabad.</p>
         </div>
       </div>
     </footer>
