@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Toaster } from "@/components/ui/sonner";
 import { SmoothScrollProvider } from "./SmoothScroll";
+import TermsModal from "./TermsModal";
 
 export default function Layout() {
   const { pathname, hash } = useLocation();
@@ -26,6 +27,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <TermsModal />
       <Toaster
         position="bottom-right"
         toastOptions={{

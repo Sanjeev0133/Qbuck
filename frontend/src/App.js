@@ -8,6 +8,7 @@ import ForEarnersPage from "./pages/ForEarnersPage";
 import ForPostersPage from "./pages/ForPostersPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import LegalPage from "./pages/LegalPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/for-posters" element={<ForPostersPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/legal" element={<LegalPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
