@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Check, Shield, FileText, Lock } from "lucide-react";
 import {
   TERMS_STORAGE_KEY,
@@ -8,32 +8,46 @@ import {
   markTermsAccepted,
 } from "../lib/consent";
 
+// Routes where the consent modal MUST NOT appear — otherwise users can't
+// actually read the docs they're being asked to consent to.
+const BYPASS_PATHS = ["/legal"];
+
 export default function TermsModal() {
   const [open, setOpen] = useState(false);
   const [agreed, setAgreed] = useState(false);
+  const { pathname } = useLocation();
+  const isBypassed = BYPASS_PATHS.some((p) => pathname.startsWith(p));
 
-  // Open on first visit if not already accepted
+  // Open on first visit if not already accepted (and not on a bypass page)
   useEffect(() => {
+    if (isBypassed) {
+      setOpen(false);
+      return;
+    }
     try {
       const accepted = localStorage.getItem(TERMS_STORAGE_KEY);
       if (!accepted) setOpen(true);
     } catch {
       setOpen(true);
     }
-  }, []);
+  }, [isBypassed, pathname]);
 
   // Allow other parts of the app (e.g. blocked form submits) to force-open
   useEffect(() => {
-    const handler = () => setOpen(true);
+    const handler = () => {
+      if (!isBypassed) setOpen(true);
+    };
     window.addEventListener(OPEN_TERMS_EVENT, handler);
     return () => window.removeEventListener(OPEN_TERMS_EVENT, handler);
-  }, []);
+  }, [isBypassed]);
 
   const accept = () => {
     if (!agreed) return;
     markTermsAccepted();
     setOpen(false);
   };
+
+  if (isBypassed) return null;
 
   return (
     <AnimatePresence>
