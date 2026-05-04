@@ -3,6 +3,7 @@ import axios from "axios";
 import { ArrowRight, Check } from "lucide-react";
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
+import { hasAcceptedTerms, requestTermsAcceptance } from "../lib/consent";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -17,6 +18,11 @@ export default function WaitlistForm({ variant = "light", role = "earner", sourc
     e.preventDefault();
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
       toast.error("Please enter a valid email");
+      return;
+    }
+    if (!hasAcceptedTerms()) {
+      toast.error("Please accept the QuickBuck terms to continue.");
+      requestTermsAcceptance();
       return;
     }
     setLoading(true);

@@ -2,30 +2,36 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check, Shield, FileText, Lock } from "lucide-react";
-
-const STORAGE_KEY = "qb_terms_accepted_v1";
+import {
+  TERMS_STORAGE_KEY,
+  OPEN_TERMS_EVENT,
+  markTermsAccepted,
+} from "../lib/consent";
 
 export default function TermsModal() {
   const [open, setOpen] = useState(false);
   const [agreed, setAgreed] = useState(false);
 
+  // Open on first visit if not already accepted
   useEffect(() => {
     try {
-      const accepted = localStorage.getItem(STORAGE_KEY);
+      const accepted = localStorage.getItem(TERMS_STORAGE_KEY);
       if (!accepted) setOpen(true);
     } catch {
       setOpen(true);
     }
   }, []);
 
+  // Allow other parts of the app (e.g. blocked form submits) to force-open
+  useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener(OPEN_TERMS_EVENT, handler);
+    return () => window.removeEventListener(OPEN_TERMS_EVENT, handler);
+  }, []);
+
   const accept = () => {
     if (!agreed) return;
-    try {
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({ accepted_at: new Date().toISOString(), version: 1 })
-      );
-    } catch {}
+    markTermsAccepted();
     setOpen(false);
   };
 
@@ -41,10 +47,8 @@ export default function TermsModal() {
           className="fixed inset-0 z-[100] flex items-end md:items-center justify-center p-0 md:p-6"
           data-testid="terms-modal-overlay"
         >
-          {/* Scrim */}
           <div className="absolute inset-0 bg-ink/70 backdrop-blur-md" />
 
-          {/* Modal */}
           <motion.div
             initial={{ opacity: 0, y: 60, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}

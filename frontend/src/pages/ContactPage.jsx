@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { FadeIn } from "../components/Motion";
-import { Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react";
+import { Mail, MapPin, ArrowRight } from "lucide-react";
+import { hasAcceptedTerms, requestTermsAcceptance } from "../lib/consent";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -21,6 +22,11 @@ export default function ContactPage() {
     }
     if (form.message.trim().length < 5) {
       toast.error("Tell us a bit more (at least 5 characters)");
+      return;
+    }
+    if (!hasAcceptedTerms()) {
+      toast.error("Please accept the QuickBuck terms to continue.");
+      requestTermsAcceptance();
       return;
     }
     setLoading(true);
