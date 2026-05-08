@@ -9,6 +9,7 @@ import ForPostersPage from "./pages/ForPostersPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
+import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/legal" element={<LegalPage />} />
+            <Route path="/admin" element={<AdminPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

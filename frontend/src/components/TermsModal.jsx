@@ -10,7 +10,7 @@ import {
 
 // Routes where the consent modal MUST NOT appear — otherwise users can't
 // actually read the docs they're being asked to consent to.
-const BYPASS_PATHS = ["/legal"];
+const BYPASS_PATHS = ["/legal", "/admin"];
 
 export default function TermsModal() {
   const [open, setOpen] = useState(false);

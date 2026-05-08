@@ -1,8 +1,11 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter, HTTPException, Header
+from fastapi.responses import PlainTextResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
+import csv
+import io
 import logging
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict, EmailStr
@@ -126,6 +129,65 @@ async def submit_contact(payload: ContactCreate):
     )
     await db.contacts.insert_one(entry.model_dump())
     return entry
+
+
+# ============ Admin (password-gated) ============
+def _check_admin(password: Optional[str]) -> None:
+    expected = os.environ.get("ADMIN_PASSWORD")
+    if not expected:
+        raise HTTPException(status_code=503, detail="Admin password not configured")
+    if not password or password != expected:
+        raise HTTPException(status_code=401, detail="Invalid admin password")
+
+
+@api_router.get("/admin/stats")
+async def admin_stats(password: Optional[str] = None, x_admin_password: Optional[str] = Header(default=None)):
+    _check_admin(password or x_admin_password)
+    waitlist_count = await db.waitlist.count_documents({})
+    contacts_count = await db.contacts.count_documents({})
+    return {"waitlist": waitlist_count, "contacts": contacts_count}
+
+
+@api_router.get("/admin/data")
+async def admin_data(
+    collection: str,
+    password: Optional[str] = None,
+    x_admin_password: Optional[str] = Header(default=None),
+    limit: int = 5000,
+):
+    _check_admin(password or x_admin_password)
+    if collection not in {"waitlist", "contacts"}:
+        raise HTTPException(status_code=400, detail="collection must be 'waitlist' or 'contacts'")
+    rows = await db[collection].find({}, {"_id": 0}).sort("created_at", -1).to_list(limit)
+    return {"collection": collection, "count": len(rows), "rows": rows}
+
+
+@api_router.get("/admin/export.csv", response_class=PlainTextResponse)
+async def admin_export_csv(
+    collection: str,
+    password: Optional[str] = None,
+    x_admin_password: Optional[str] = Header(default=None),
+):
+    _check_admin(password or x_admin_password)
+    if collection not in {"waitlist", "contacts"}:
+        raise HTTPException(status_code=400, detail="collection must be 'waitlist' or 'contacts'")
+    rows = await db[collection].find({}, {"_id": 0}).sort("created_at", -1).to_list(50000)
+
+    if collection == "waitlist":
+        fieldnames = ["created_at", "email", "role", "source", "id"]
+    else:
+        fieldnames = ["created_at", "name", "email", "subject", "message", "id"]
+
+    buf = io.StringIO()
+    writer = csv.DictWriter(buf, fieldnames=fieldnames, extrasaction="ignore")
+    writer.writeheader()
+    for r in rows:
+        writer.writerow(r)
+    return PlainTextResponse(
+        content=buf.getvalue(),
+        media_type="text/csv",
+        headers={"Content-Disposition": f'attachment; filename="quickbuck-{collection}.csv"'},
+    )
 
 
 app.include_router(api_router)
